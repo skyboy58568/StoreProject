@@ -7,7 +7,7 @@ const Product = require("./models/product");
 const products = require("./products.json")
 
 connectDB(
-  "mongodb+srv://chisreerag:1234@mynodeprojects.ivxs4r0.mongodb.net/StoreAPI?retryWrites=true&w=majority"
+  process.env.MONGO_URL
 )
   .then(() => console.log("Mongo server started"))
   .catch((err) => console.log("Mongo Error"));
