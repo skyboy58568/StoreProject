@@ -5,15 +5,6 @@ exports.addProduct = async () => {
   console.log("CreateProduct");
 };
 
-exports.getStaticProducts = async (req, res) => {
-  const search = "a";
-  const products = await Product.find({
-    price: { $gt: 100 },
-  });
-
-  res.status(200).json({ products: products, nbHits: products.length });
-};
-
 exports.getAllProducts = async (req, res) => {
 
     let filterString ={}
@@ -69,24 +60,9 @@ exports.getAllProducts = async (req, res) => {
 
   queryObject = queryObject.skip(skip).limit(limit);
 
- 
-
-
-  
-
   const products = await queryObject;
 
   res.status(200).json({ products: products, nbHits: products.length });
 };
 
-exports.getProduct = async () => {
-  console.log("get a Product");
-};
 
-exports.updateProduct = async () => {
-  console.log("get a Product");
-};
-
-exports.deleteProduct = async () => {
-  console.log("get a Product");
-};
